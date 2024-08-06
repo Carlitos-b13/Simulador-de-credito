@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Crédito</title>
+    <link rel="stylesheet" href="Styles.css"> 
+</head>
+<body>
+
+    <h1>Simulador de Crédito</h1>
+
+    <div class="container">
+        <div class="form-group">
+            <label for="tipoCredito">Tipo de Crédito:</label>
+            <select id="tipoCredito">
+                <option value="personal">Préstamo Personal</option>
+                <option value="hipotecario">Crédito Hipotecario</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="montoPrestamo">Monto del Préstamo:</label>
+            <input type="number" id="montoPrestamo" placeholder="Ingrese el monto del préstamo" required>
+        </div>
+
+        <div class="form-group">
+            <label for="tasaInteres">Tasa de Interés Anual (%):</label>
+            <input type="number" id="tasaInteres" placeholder="Ingrese la tasa de interés anual" required>
+        </div>
+
+        <div class="form-group">
+            <label for="plazo">Plazo del Préstamo (años):</label>
+            <input type="number" id="plazo" placeholder="Ingrese el plazo en años" required>
+        </div>
+
+        <div class="form-group">
+            <label for="enganche">Enganche o Pago Inicial (opcional):</label>
+            <input type="number" id="enganche" placeholder="Ingrese el enganche o pago inicial">
+        </div>
+
+        <div class="form-group">
+            <label for="comisionApertura">Comisión por Apertura (% opcional):</label>
+            <input type="number" id="comisionApertura" placeholder="Ingrese la comisión por apertura">
+        </div>
+
+        <button onclick="calcularCredito()">Calcular</button>
+
+        <div id="resultados"></div>
+    </div>
+
+    <script src="script.js"></script> 
+</body>
+</html>
