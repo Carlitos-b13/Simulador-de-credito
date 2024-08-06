@@ -7,48 +7,58 @@
     <link rel="stylesheet" href="Styles.css"> 
 </head>
 <body>
-
-    <h1>Simulador de Crédito</h1>
-
     <div class="container">
-        <div class="form-group">
-            <label for="tipoCredito">Tipo de Crédito:</label>
-            <select id="tipoCredito">
-                <option value="personal">Préstamo Personal</option>
-                <option value="hipotecario">Crédito Hipotecario</option>
-            </select>
-        </div>
+        <h1>Simulador de Crédito</h1>
+        <form id="formCredito">
+            <div class="form-group">
+                <label for="tipoCredito">Tipo de Crédito:</label>
+                <select id="tipoCredito">
+                    <option value="hipotecario">Hipotecario</option>
+                    <option value="personal">Personal</option>
+                    <option value="automotriz">Automotriz</option>
+                </select>
+            </div>
 
-        <div class="form-group">
-            <label for="montoPrestamo">Monto del Préstamo:</label>
-            <input type="number" id="montoPrestamo" placeholder="Ingrese el monto del préstamo" required>
-        </div>
+            <div class="form-group">
+                <label for="montoPrestamo">Monto del Préstamo:</label>
+                <input type="number" id="montoPrestamo" step="0.01" required>
+            </div>
 
-        <div class="form-group">
-            <label for="tasaInteres">Tasa de Interés Anual (%):</label>
-            <input type="number" id="tasaInteres" placeholder="Ingrese la tasa de interés anual" required>
-        </div>
+            <div class="form-group">
+                <label for="tasaInteres">Tasa de Interés Anual (%):</label>
+                <input type="number" id="tasaInteres" step="0.01" required>
+            </div>
 
-        <div class="form-group">
-            <label for="plazo">Plazo del Préstamo (años):</label>
-            <input type="number" id="plazo" placeholder="Ingrese el plazo en años" required>
-        </div>
+            <div class="form-group">
+                <label for="plazo">Plazo del Préstamo (años):</label>
+                <input type="number" id="plazo" required>
+            </div>
 
-        <div class="form-group">
-            <label for="enganche">Enganche o Pago Inicial (opcional):</label>
-            <input type="number" id="enganche" placeholder="Ingrese el enganche o pago inicial">
-        </div>
+            <div class="form-group">
+                <label for="enganche">Enganche:</label>
+                <input type="number" id="enganche" step="0.01">
+            </div>
 
-        <div class="form-group">
-            <label for="comisionApertura">Comisión por Apertura (% opcional):</label>
-            <input type="number" id="comisionApertura" placeholder="Ingrese la comisión por apertura">
-        </div>
+            <div class="form-group">
+                <label for="comisionApertura">Comisión por Apertura (%):</label>
+                <input type="number" id="comisionApertura" step="0.01">
+            </div>
 
-        <button onclick="calcularCredito()">Calcular</button>
+            <div class="form-group">
+                <label for="tipoPeriodo">Tipo de Período:</label>
+                <select id="tipoPeriodo">
+                    <option value="mensual">Mensual</option>
+                    <option value="trimestral">Trimestral</option>
+                    <option value="semestral">Semestral</option>
+                    <option value="anual">Anual</option>
+                </select>
+            </div>
+
+            <button type="button" onclick="calcularCredito()">Calcular Crédito</button>
+        </form>
 
         <div id="resultados"></div>
     </div>
-
     <script src="script.js"></script> 
 </body>
 </html>
